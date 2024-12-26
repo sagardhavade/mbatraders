@@ -10,8 +10,8 @@ jQuery(document).ready(function($) {
         theme: 'light',
         breakpoint: 960,
         position: 'right',
-        phoneBtn: '18009997788',
-        locationBtn: 'https://www.google.com/maps'
+        phoneBtn: '9130925992',
+        locationBtn: 'https://maps.app.goo.gl/zZZuTxmCPWkiSmww6'
       });
 
       //All Carousel active
