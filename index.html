@@ -39,6 +39,35 @@
         z-index: 1;
       }
       
+  /* CSS to style the WhatsApp button */
+  .whatsapp-button {
+      position: fixed;
+      bottom: 100px;
+      right: 130px;
+      width: 60px;
+      height: 60px;
+      /* background-color: #25D366; */
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      font-size: 40px;
+    }
+
+   
+
+    @media (max-width: 600px) {
+      .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        bottom: 120px;
+        right: 40px;
+      }
+
+     
+    }
     </style>
   </head>
   <!--HEADE END-->
@@ -724,6 +753,9 @@
         </div>
       </div>
       <!--:::::FOOTER AREA END :::::::-->
+      <a href="https://api.whatsapp.com/send?phone=919130925992&amp;text=Hello%2C%20I'm%20interested%20in%20your%20Courses" target="_blank" class="whatsapp-button" aria-label="whatsapp">
+        <i class="fab fa-whatsapp fa-beat-fade 2xl" style="color: #63E6BE;"></i>
+      </a>
     </div>
    
     <!--:::::jquery 3.2.1 js :::::::-->
