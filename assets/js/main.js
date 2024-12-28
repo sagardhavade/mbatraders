@@ -350,4 +350,26 @@ jQuery(document).ready(function($) {
 
 }(jQuery));
 
+function validatePhoneNumber(input) {
+  // Ensure only numbers are entered and the input length is no more than 10 digits.
+  input.value = input.value.replace(/[^0-9]/g, '').slice(0, 10);
+}
 
+function checkPhoneNumber(input) {
+  const errorMessage = document.getElementById('error-message');
+  if (input.value.length < 10) {
+    errorMessage.style.display = 'block'; // Show error message
+  } else {
+    errorMessage.style.display = 'none'; // Hide error message
+  }
+}
+function validateEmail(input) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const errorMessage = document.getElementById('email-error');
+
+  if (!emailPattern.test(input.value)) {
+    errorMessage.style.display = 'block'; // Show error message
+  } else {
+    errorMessage.style.display = 'none'; // Hide error message
+  }
+}
