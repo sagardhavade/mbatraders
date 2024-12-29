@@ -1582,6 +1582,50 @@ a.subscribe-btn i {
     transition: all .3s;
 }
 
+
+.cta-form button.subscribe-btn {
+    width: 43%;
+   float: right;
+}
+button.subscribe-btn {
+   padding: 15px 60px 15px 30px;
+   background: #22cd6f;
+   border-radius: 5px;
+   color: #fff;
+   text-transform: uppercase;
+   position: relative;
+   z-index: 2;
+   text-align: left;
+   border: 1px solid transparent;
+   font-size: 15px;
+}
+button.subscribe-btn:hover, 
+button.subscribe-btn:hover i{
+   border-color: #22cd6f;
+   background: transparent;
+   color: #22cd6f;
+   -webkit-transition: all .3s;
+   -o-transition: all .3s;
+   transition: all .3s;
+}
+
+button.subscribe-btn i {
+   background: #fff;
+   color: #22cd6f;
+   height: 35px;
+   width: 35px;
+   text-align: center !important;
+   position: absolute;
+   right: 13px;
+   line-height: 35px;
+   border-radius: 3px;
+   top: 50%;
+   margin-top: -17.5px;
+   -webkit-transition: all .3s;
+   -o-transition: all .3s;
+   transition: all .3s;
+}
+
 .cta-form {
     width: 80%;
     margin: 0 auto;

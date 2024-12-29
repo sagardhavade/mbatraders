@@ -64,7 +64,95 @@
           right: 40px;
         }
       }
+
+      
+    .offer-container {
+      display: inline-flex;
+      align-items: center;
+      background-color: #ffd700;
+      color: #000;
+      margin-top: 13px;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: bold;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .offer-tag {
+      position: absolute;
+      top: -22px;
+      left: -12px;
+      background-color: #e4002b;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 5px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #e4002b;
+      margin-right: 10px;
+    }
+
+    .new-price {
+      font-size: 24px;
+      color: #000;
+    }
     </style>
+   <!-- EmailJS Script -->
+<script
+type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+<script type="text/javascript">
+// Initialize EmailJS
+(function () {
+  emailjs.init("1a4scbxhufo3XacYQ"); // Use your public key
+})();
+
+// Handle form submissions
+window.onload = function () {
+  // Handle first form submission
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      emailjs.sendForm("service_a4khda8", "template_yrpbai9", this).then(
+        () => {
+          console.log("SUCCESS! Form 1");
+          alert("Thank you for reaching out!");
+          contactForm.reset(); // Clear the form
+        },
+        (error) => {
+          console.error("FAILED... Form 1", error);
+        }
+      );
+    });
+  }
+
+  // Handle second form submission
+  const contactForm1 = document.getElementById("contact-form1");
+  if (contactForm1) {
+    contactForm1.addEventListener("submit", function (event) {
+      event.preventDefault();
+      emailjs.sendForm("service_a4khda8", "template_evv4wdg", this).then(
+        () => {
+          console.log("SUCCESS! Form 2");
+          alert("Thank you for your message!");
+          contactForm1.reset(); // Clear the form
+        },
+        (error) => {
+          console.error("FAILED... Form 2", error);
+        }
+      );
+    });
+  }
+};
+</script>
+
   </head>
   <!--HEADE END-->
 
@@ -485,8 +573,8 @@
                     <li>Risk Management</li>
                     <li>Option Strategies</li>
                   </ol>
-                  <a href="#contact" class="cbtn pricing-btn">
-                    <svg
+                  <!-- <a href="#contact" class="cbtn pricing-btn"> -->
+                    <!-- <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       width="15"
@@ -496,10 +584,26 @@
                         fill="#ffffff"
                         d="M0 64C0 46.3 14.3 32 32 32l64 0 16 0 176 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-56.2 0c9.6 14.4 16.7 30.6 20.7 48l35.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-35.6 0c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c32.8 0 61-19.7 73.3-48L32 208c-17.7 0-32-14.3-32-32s14.3-32 32-32l153.3 0C173 115.7 144.8 96 112 96L96 96 32 96C14.3 96 0 81.7 0 64z"
                       />
+                    </svg> -->
+                    <!-- <span class="original-price">20K</span>
+                    <span class="discounted-price">Only 15k</span> -->
+                  <!-- </a> -->
+                  <div class="offer-container">
+                    <div class="offer-tag">SPECIAL OFFER</div>
+                    <span class="old-price">20,000/-</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      width="15"
+                      viewBox="0 0 320 512"
+                    >
+                      <path
+                        fill="#000000"
+                        d="M0 64C0 46.3 14.3 32 32 32l64 0 16 0 176 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-56.2 0c9.6 14.4 16.7 30.6 20.7 48l35.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-35.6 0c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c32.8 0 61-19.7 73.3-48L32 208c-17.7 0-32-14.3-32-32s14.3-32 32-32l153.3 0C173 115.7 144.8 96 112 96L96 96 32 96C14.3 96 0 81.7 0 64z"
+                      />
                     </svg>
-                    <span class="original-price">20K</span>
-                    <span class="discounted-price">Only 15k</span>
-                  </a>
+                    <span class="new-price" >&nbsp;14,999/-</span>
+                  </div>
                 </div>
                 <div class="circles-wrap">
                   <div class="circles">
@@ -530,7 +634,7 @@
                     <li>Scalping Strategy</li>
                   </ol>
 
-                  <a href="#contact" class="cbtn pricing-btn">
+                  <!-- <a href="#contact" class="cbtn pricing-btn">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
@@ -544,7 +648,23 @@
                     </svg>
                     <span class="original-price">15K</span>
                     <span class="discounted-price">Only 10k</span>
-                  </a>
+                  </a> -->
+                  <div class="offer-container">
+                    <div class="offer-tag">SPECIAL OFFER</div>
+                    <span class="old-price">15,000/-</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      width="15"
+                      viewBox="0 0 320 512"
+                    >
+                      <path
+                        fill="#000000"
+                        d="M0 64C0 46.3 14.3 32 32 32l64 0 16 0 176 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-56.2 0c9.6 14.4 16.7 30.6 20.7 48l35.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-35.6 0c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c32.8 0 61-19.7 73.3-48L32 208c-17.7 0-32-14.3-32-32s14.3-32 32-32l153.3 0C173 115.7 144.8 96 112 96L96 96 32 96C14.3 96 0 81.7 0 64z"
+                      />
+                    </svg>
+                    <span class="new-price" >&nbsp;9,999/-</span>
+                  </div>
                 </div>
                 <div class="circles-wrap">
                   <div class="circles">
@@ -579,7 +699,7 @@
                     <li>Trading Psychology</li>
                   </ol>
 
-                  <a href="#contact" class="cbtn pricing-btn">
+                  <!-- <a href="#contact" class="cbtn pricing-btn">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
@@ -593,7 +713,23 @@
                     </svg>
                     <span class="original-price">12K</span>
                     <span class="discounted-price">Only 8k</span>
-                  </a>
+                  </a> -->
+                  <div class="offer-container">
+                    <div class="offer-tag">SPECIAL OFFER</div>
+                    <span class="old-price">12,000/-</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      width="15"
+                      viewBox="0 0 320 512"
+                    >
+                      <path
+                        fill="#000000"
+                        d="M0 64C0 46.3 14.3 32 32 32l64 0 16 0 176 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-56.2 0c9.6 14.4 16.7 30.6 20.7 48l35.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-35.6 0c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c32.8 0 61-19.7 73.3-48L32 208c-17.7 0-32-14.3-32-32s14.3-32 32-32l153.3 0C173 115.7 144.8 96 112 96L96 96 32 96C14.3 96 0 81.7 0 64z"
+                      />
+                    </svg>
+                    <span class="new-price" >&nbsp;8,999/-</span>
+                  </div>
                 </div>
                 <div class="circles-wrap">
                   <div class="circles">
@@ -807,13 +943,14 @@
               </div>
               <div class="space-20"></div>
               <div class="contact-form">
-                <form action="#">
-                  <input type="text" placeholder="Name" />
+                <form id="contact-form">
+                  <input type="text" placeholder="Name" name="user_name" />
                   <input
                     type="email"
                     placeholder="Email"
                     onblur="validateEmail(this)"
                     required
+                    name="user_email"
                   />
                   <div
                     id="email-error"
@@ -823,7 +960,7 @@
                     Please enter a valid email address.
                   </div>
                   <textarea
-                    name="messege"
+                    name="user_address"
                     id="messege"
                     cols="30"
                     rows="2"
@@ -832,6 +969,7 @@
                   <input
                     type="number"
                     placeholder="Phone Number"
+                    name="user_number"
                     onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                     maxlength="10"
                     oninput="validatePhoneNumber(this)"
@@ -845,17 +983,22 @@
                     Please enter a valid 10-digit phone number.
                   </div>
                   <textarea
-                    name="messege"
+                    name="user_question"
                     id="messege"
                     cols="30"
                     rows="2"
                     placeholder="Your Questions"
                   ></textarea>
+                  <button class="subscribe-btn">Send Message<i class="fal fa-comments-alt"></i></button>
+                  <!-- <a class="subscribe-btn"
+                  >sent now <i class="fal fa-comments-alt"></i 
+                ></a>-->
                 </form>
                 <div class="space-20"></div>
-                <a href="#" class="subscribe-btn"
+                <!-- <a href="#" type="submit" class="subscribe-btn"
                   >sent now <i class="fal fa-comments-alt"></i
-                ></a>
+                ></a> -->
+                
               </div>
             </div>
           </div>
@@ -878,11 +1021,14 @@
               </div>
               <div class="space-40"></div>
               <div class="cta-form">
-                <form action="#">
-                  <input type="email" placeholder="Enter Your Email.." />
-                  <a href="#" class="subscribe-btn"
+                <form id="contact-form1">
+                  <input type="email" name="user_email" required  placeholder="Enter Your Email.." />
+                  <!-- <a href="#" class="subscribe-btn"
                     >subscribe <i class="fal fa-comments-alt"></i
-                  ></a>
+                  ></a> -->
+                  <button class="subscribe-btn"
+                    >subscribe <i class="fal fa-comments-alt"></i
+                  ></button>
                 </form>
               </div>
             </div>
