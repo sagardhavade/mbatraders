@@ -1587,7 +1587,8 @@ a.subscribe-btn i {
     width: 43%;
    float: right;
 }
-button.subscribe-btn {
+button.subscribe-btn { 
+    
    padding: 15px 60px 15px 30px;
    background: #22cd6f;
    border-radius: 5px;
